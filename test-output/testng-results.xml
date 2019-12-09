@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="31714" started-at="2019-12-09T06:38:47Z" finished-at="2019-12-09T06:39:18Z">
+    <groups>
+    </groups>
+    <test name="SpreeAutomation" duration-ms="31714" started-at="2019-12-09T06:38:47Z" finished-at="2019-12-09T06:39:18Z">
+      <class name="TestSignout">
+        <test-method status="PASS" signature="testLogout()[pri:0, instance:TestSignout@2c8d66b2]" name="testLogout" duration-ms="5455" started-at="2019-12-09T06:39:13Z" finished-at="2019-12-09T06:39:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogout -->
+      </class> <!-- TestSignout -->
+      <class name="TestLoginExistingUser">
+        <test-method status="PASS" signature="testLoginExisting()[pri:0, instance:TestLoginExistingUser@7dc36524]" name="testLoginExisting" duration-ms="5002" started-at="2019-12-09T06:39:01Z" finished-at="2019-12-09T06:39:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginExisting -->
+      </class> <!-- TestLoginExistingUser -->
+      <class name="TestForgotPassword">
+        <test-method status="PASS" signature="testForgotPassword()[pri:0, instance:TestForgotPassword@75bd9247]" name="testForgotPassword" duration-ms="5101" started-at="2019-12-09T06:38:52Z" finished-at="2019-12-09T06:38:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForgotPassword -->
+      </class> <!-- TestForgotPassword -->
+      <class name="TestInvalidUserPassword">
+        <test-method status="PASS" signature="testInvalidUser()[pri:0, instance:TestInvalidUserPassword@7d417077]" name="testInvalidUser" duration-ms="3888" started-at="2019-12-09T06:38:57Z" finished-at="2019-12-09T06:39:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUser -->
+      </class> <!-- TestInvalidUserPassword -->
+      <class name="TestSearchProduct">
+        <test-method status="PASS" signature="testSearchProduct()[pri:0, instance:TestSearchProduct@35bbe5e8]" name="testSearchProduct" duration-ms="6759" started-at="2019-12-09T06:39:06Z" finished-at="2019-12-09T06:39:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchProduct -->
+      </class> <!-- TestSearchProduct -->
+      <class name="Error_BlankEmail_ForgotPwd">
+        <test-method status="PASS" signature="testError_EmailBlank_ForgotPwd()[pri:0, instance:Error_BlankEmail_ForgotPwd@3f0ee7cb]" name="testError_EmailBlank_ForgotPwd" duration-ms="5475" started-at="2019-12-09T06:38:47Z" finished-at="2019-12-09T06:38:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testError_EmailBlank_ForgotPwd -->
+      </class> <!-- Error_BlankEmail_ForgotPwd -->
+    </test> <!-- SpreeAutomation -->
+  </suite> <!-- Default Suite -->
+</testng-results>
