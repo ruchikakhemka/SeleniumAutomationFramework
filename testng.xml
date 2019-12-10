@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="testsuite" verbose="1">
+    <test name="Login and Search">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.TestSearchProduct"/>
+
+        </classes>
+    </test>
+</suite>
