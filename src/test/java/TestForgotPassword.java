@@ -12,12 +12,12 @@ public class TestForgotPassword {
     public void testForgotPassword()
     {
         WebDriver driver = null;
-        String chrome_path = "/Applications/chromedriver";
-        System.setProperty("webdriver.chrome.driver",chrome_path);
+        //String chrome_path = "/Applications/chromedriver";
+        //System.setProperty("webdriver.chrome.driver",chrome_path);
 
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
         driver.get("https://spree-vapasi-prod.herokuapp.com");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement login_element = null;
 
         //Click on login
