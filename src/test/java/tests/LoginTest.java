@@ -7,6 +7,7 @@ import Pages.LoginPage;
 import Suite.SuiteManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import testdata.loginCredentials;
@@ -21,6 +22,7 @@ public class LoginTest extends SuiteManager{
     LoginPage loginPage;
     HomePage homePage;
     LogOutPage logOutPage;
+
     @Test(description = "Login into spree website",dataProvider = "loginCredentials", dataProviderClass = loginCredentials.class)
     public void testLogin(String username, String passwd)
     {
@@ -29,6 +31,7 @@ public class LoginTest extends SuiteManager{
         loginPage = basePage.clickLoginButton();
         //loginPage =  new LoginPage();
         loginPage.sendUserName_Password(username,passwd);
+        loginPage.waitForLoginButton();
         homePage=loginPage.clickLoginButton();
         Assert.assertEquals(loginPage.getLoginMessage(), login_message);
 

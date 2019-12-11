@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeTest;
 import util.ConfigFileReader;
 import util.DriverManager;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class SuiteManager {
     private static String username;
     private static String passwd;
     @BeforeSuite(alwaysRun = true )
-    public void startDriver()
+    public void startDriver()throws MalformedURLException
     {
         driverManager = new DriverManager();
     }
