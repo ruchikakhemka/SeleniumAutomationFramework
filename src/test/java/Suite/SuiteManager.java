@@ -59,5 +59,9 @@ public class SuiteManager {
         submit.click();
 
     }
+    public String getsearchString()
+    {
+        return configFileReader.getProperty("search_str");
+    }
 
 }

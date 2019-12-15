@@ -7,6 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.DriverManager;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class HomePage extends SuiteManager {
     public HomePage()
     {
@@ -17,9 +21,9 @@ public class HomePage extends SuiteManager {
 
     @FindBy(xpath = "//input[@class = 'btn btn-success']")
     private WebElement searchButton;
-    private String searchkeyword = "Bags";
+    private String searchkeyword = getsearchString();
 
-    @FindBy(xpath = "//span[@class = 'info mt-3 d-block']")
+    @FindBy(xpath = "//div[@data-hook = 'products_list_item']")
     private WebElement productList;
 
 
@@ -33,6 +37,9 @@ public class HomePage extends SuiteManager {
     @FindBy(xpath = "//button[@name = 'checkout']")
     private WebElement checkOut;
 
+    @FindAll(@FindBy(xpath = "//span[@class = 'info mt-3 d-block']"))
+    private List<WebElement> productnameList;
+
     public void enterSearchValue()
     {
         searchInputBox.clear();
@@ -42,6 +49,16 @@ public class HomePage extends SuiteManager {
     {
 
         searchButton.click();
+    }
+    public List getsearchProductNames()
+    {
+        List<String> productNames = new ArrayList<String>();
+        for (WebElement element: productnameList)
+        {
+            productNames.add(element.getText());
+            //System.out.println(element.getText());
+        }
+        return productNames;
     }
     public void selectItem()
     {
@@ -57,6 +74,8 @@ public class HomePage extends SuiteManager {
     {
         cart.click();
     }
+
+
     public String getProductTitle()
     {
         return productList.getText();

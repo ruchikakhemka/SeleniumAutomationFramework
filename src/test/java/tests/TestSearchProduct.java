@@ -2,15 +2,13 @@ package tests;
 
 import Pages.HomePage;
 import Suite.SuiteManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testdata.loginCredentials;
-import util.DriverManager;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +16,9 @@ public class TestSearchProduct extends SuiteManager {
 
 
     String product_title = "Ruby on Rails Bag";
-
+    List<String> productnames = new ArrayList<String>();
     HomePage homepage;
+    List<String> searchStrings = new ArrayList<String>();
 
     @Test(description = "Search Product")
     public void testSearchProduct(){
@@ -31,9 +30,15 @@ public class TestSearchProduct extends SuiteManager {
         //click search button
         homepage.clickSearchButton();
 
-        //Check no of items matchig bag keyword
-        //List<WebElement> bag_items = DriverManager.driver.findElements(By.xpath("//span[@class = 'info mt-3 d-block' ]"));
-        //Assert.assertEquals(bag_items.size(), 2);
+        //Get product name list
+        productnames = homepage.getsearchProductNames();
+        //Check whether the product name contains the search keyword
+        String[] keywords = getsearchString().split(" ");
+        keywords[0].toLowerCase();
+        keywords[1].toLowerCase();
+        Assert.assertTrue(productnames.contains(keywords[0]) || productnames.contains(keywords[1]));
+
+
 
         //Now select the first item.
         homepage.selectItem();
