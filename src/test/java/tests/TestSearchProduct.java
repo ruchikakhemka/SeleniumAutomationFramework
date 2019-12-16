@@ -19,7 +19,7 @@ public class TestSearchProduct extends SuiteManager {
     List<String> productnames = new ArrayList<String>();
     HomePage homepage;
     List<String> searchStrings = new ArrayList<String>();
-
+    boolean contains_string = false;
     @Test(description = "Search Product")
     public void testSearchProduct(){
         //Click Search input box and enter search keyword
@@ -36,7 +36,16 @@ public class TestSearchProduct extends SuiteManager {
         String[] keywords = getsearchString().split(" ");
         keywords[0].toLowerCase();
         keywords[1].toLowerCase();
-        Assert.assertTrue(productnames.contains(keywords[0]) || productnames.contains(keywords[1]));
+        for(String name:productnames){
+            /*if(s.contains(keywords[0])|| s.contains(keywords[1]))
+                contains_string = true;
+            else
+                contains_string = false;*/
+
+            Assert.assertTrue(name.toLowerCase().contains(keywords[0]) || name.toLowerCase().contains(keywords[1]));
+
+        }
+
 
 
 
@@ -51,7 +60,6 @@ public class TestSearchProduct extends SuiteManager {
         homepage.addToCart();
 
         //check that the added items are there in the cart
-        //String product_title = "Ruby on Rails Bag";
         Assert.assertEquals(homepage.getProductTitle(), product_title);
 
         //do checkout

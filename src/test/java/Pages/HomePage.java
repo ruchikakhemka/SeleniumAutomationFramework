@@ -78,6 +78,7 @@ public class HomePage extends SuiteManager {
 
     public String getProductTitle()
     {
+        System.out.println(productList.getText());
         return productList.getText();
     }
     public void checkOut()
