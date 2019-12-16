@@ -24,8 +24,7 @@ public class LoginPage extends SuiteManager {
     @FindBy(xpath = "//input[@value ='Login']")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//div[contains(text(), 'Logged in successfully')]")
-    private WebElement loginMsg;
+
 
     public void sendUserName_Password(String username, String password)
     {
@@ -45,9 +44,6 @@ public class LoginPage extends SuiteManager {
         return new HomePage();
     }
 
-    public String getLoginMessage()
-    {
-        return loginMsg.getText();
-    }
+
 
 }

@@ -23,7 +23,8 @@ public class HomePage extends SuiteManager {
     private WebElement searchButton;
     private String searchkeyword = getsearchString();
 
-
+    @FindBy(xpath = "//div[contains(text(), 'Logged in successfully')]")
+    private WebElement loginMsg;
 
 
 
@@ -33,6 +34,10 @@ public class HomePage extends SuiteManager {
     @FindBy(xpath = "//input[@name = 'quantity']")
     private WebElement productQty;
 
+    public String getLoginMessage()
+    {
+        return loginMsg.getText();
+    }
 
 
     @FindAll(@FindBy(xpath = "//span[@class = 'info mt-3 d-block']"))

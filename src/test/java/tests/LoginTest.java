@@ -33,7 +33,7 @@ public class LoginTest extends SuiteManager{
         loginPage.sendUserName_Password(username,passwd);
         loginPage.waitForLoginButton();
         homePage=loginPage.clickLoginButton();
-        Assert.assertEquals(loginPage.getLoginMessage(), login_message);
+        Assert.assertEquals(homePage.getLoginMessage(), login_message);
 
     }
 
