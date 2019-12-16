@@ -23,8 +23,7 @@ public class HomePage extends SuiteManager {
     private WebElement searchButton;
     private String searchkeyword = getsearchString();
 
-    @FindBy(xpath = "//div[@data-hook = 'products_list_item']")
-    private WebElement productList;
+
 
 
 
@@ -34,8 +33,7 @@ public class HomePage extends SuiteManager {
     @FindBy(xpath = "//input[@name = 'quantity']")
     private WebElement productQty;
 
-    @FindBy(xpath = "//button[@name = 'checkout']")
-    private WebElement checkOut;
+
 
     @FindAll(@FindBy(xpath = "//span[@class = 'info mt-3 d-block']"))
     private List<WebElement> productnameList;
@@ -53,6 +51,7 @@ public class HomePage extends SuiteManager {
     public List getsearchProductNames()
     {
         List<String> productNames = new ArrayList<String>();
+        System.out.println(productnameList.size());
         for (WebElement element: productnameList)
         {
             productNames.add(element.getText());
@@ -62,7 +61,7 @@ public class HomePage extends SuiteManager {
     }
     public void selectItem()
     {
-        productList.click();
+        productnameList.get(0).click();
     }
     public void enterItemQty()
     {
@@ -70,21 +69,14 @@ public class HomePage extends SuiteManager {
         productQty.clear();
         productQty.sendKeys("2");
     }
-    public void addToCart()
+    public CartPage addToCart()
     {
         cart.click();
+        return new CartPage();
     }
 
 
-    public String getProductTitle()
-    {
-        System.out.println(productList.getText());
-        return productList.getText();
-    }
-    public void checkOut()
-    {
-        checkOut.click();
-    }
+
 
 
 }

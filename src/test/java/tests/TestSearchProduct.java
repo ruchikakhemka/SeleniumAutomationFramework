@@ -1,5 +1,7 @@
 package tests;
 
+import Pages.CartPage;
+import Pages.CheckoutPage;
 import Pages.HomePage;
 import Suite.SuiteManager;
 import org.testng.Assert;
@@ -18,6 +20,8 @@ public class TestSearchProduct extends SuiteManager {
     String product_title = "Ruby on Rails Bag";
     List<String> productnames = new ArrayList<String>();
     HomePage homepage;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
     List<String> searchStrings = new ArrayList<String>();
     boolean contains_string = false;
     @Test(description = "Search Product")
@@ -57,13 +61,14 @@ public class TestSearchProduct extends SuiteManager {
         homepage.enterItemQty();
 
         //click Add to cart
-        homepage.addToCart();
+        cartPage =homepage.addToCart();
 
         //check that the added items are there in the cart
-        Assert.assertEquals(homepage.getProductTitle(), product_title);
+        Assert.assertEquals(cartPage.getProductTitle(), product_title);
 
         //do checkout
-        homepage.checkOut();
+        checkoutPage = cartPage.checkOut();
+        Assert.assertEquals(checkoutPage.checkoutPageTitle(),"Checkout");
     }
 
 }
