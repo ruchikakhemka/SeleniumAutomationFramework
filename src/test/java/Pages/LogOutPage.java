@@ -12,17 +12,12 @@ public class LogOutPage {
     {
         PageFactory.initElements(DriverManager.driver, this );
     }
-    @FindBy(xpath = "//a[text() ='Logout']")
-    private WebElement logoutButton;
+
 
     @FindBy(xpath = "//div[contains(text(), 'Signed out successfully.')]")
     private WebElement logoutMsg;
 
-    public LogOutPage clicklogOut()
-    {
-        logoutButton.click();
-       return new LogOutPage();
-    }
+
     public String getLogOutMessage()
     {
         return logoutMsg.getText();

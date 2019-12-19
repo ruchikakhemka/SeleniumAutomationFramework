@@ -24,7 +24,8 @@ public class LoginPage extends SuiteManager {
     @FindBy(xpath = "//input[@value ='Login']")
     private WebElement loginButton;
 
-
+    @FindBy(xpath = "//a[text() ='Logout']")
+    private WebElement logoutButton;
 
     public void sendUserName_Password(String username, String password)
     {
@@ -43,7 +44,11 @@ public class LoginPage extends SuiteManager {
         loginButton.click();
         return new HomePage();
     }
-
+    public LogOutPage clicklogOut()
+    {
+        logoutButton.click();
+        return new LogOutPage();
+    }
 
 
 }

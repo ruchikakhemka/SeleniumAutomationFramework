@@ -64,4 +64,11 @@ public class SuiteManager {
         return configFileReader.getProperty("search_str");
     }
 
+    @AfterSuite
+    public void logout(){
+
+
+    }
+
+
 }

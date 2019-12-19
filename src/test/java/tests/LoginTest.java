@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import testdata.loginCredentials;
 import util.DriverManager;
@@ -37,18 +38,17 @@ public class LoginTest extends SuiteManager{
 
     }
 
-/*
-    @Test(dependsOnMethods = {"testLogin"})
+    @AfterClass
     public void testlogOut()
     {
 
         //click Logout button
-        logOutPage = logOutPage.clicklogOut();
+        logOutPage = loginPage.clicklogOut();
 
         //Check for successful logout message
         String logout_message = "Signed out successfully.";
         Assert.assertEquals(logOutPage.getLogOutMessage(),logout_message);
-    }*/
+    }
 
 
 }
